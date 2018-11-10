@@ -1,0 +1,55 @@
+/*
+    Open Weather API Group Project 6
+    CSS Styles Sheet
+    Team Members: Kimberly Leubner, Daniel Diaz, Curtis Kesner
+    Term: Fall 2018
+*/
+
+/* HTML Styles */
+
+html {
+    background-color: grey;
+}
+
+/* Body Styles */
+
+body {
+    margin: 1% auto;
+    width: 55%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+    box-shadow: 0 0 25px #000000;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    padding: 1em;
+    background-color: bisque;
+}
+
+footer {
+    background-color: bisque;
+    text-align: center;
+    font-size: .9em;
+}
+
+p {
+    display: block;
+    float: right;
+    width: 50%;
+    margin-right: 2em;
+    text-align: justify;
+}
+
+#cityPic {
+    display: block;
+    float: left;
+    border: 1px black solid;
+    margin-left: 2em;
+    margin-bottom: 2em;
+}
+
+#bodyContent {
+    overflow: hidden;
+}
