@@ -7,6 +7,7 @@
 var weatherReport;
 var httpRequest = false;
 
+
 function getRequestObject() {
     try {
         httpRequest = new XMLHttpRequest();
@@ -41,16 +42,31 @@ function getWeather(evt) {
          console.log(jsObject);
 
         // Temperature, covnerted from Kelvin to F
-        var temp = Math.round((jsObject.main.temp - 273.15)*9/5 + 32);
+        var temp = Math.round((jsObject.main.temp - 273.15)*9/5 + 32) + "°F";
+
+        // High Temp of Day
+        var tempHigh = Math.round((jsObject.main.temp_max - 273.15)*9/5 + 32) + "°F";
+
+        // Low Temp of the Day
+        var tempLow = Math.round((jsObject.main.temp_min - 273.15)*9/5 + 32) + "°F";
+
+        // Description
+        var desc = jsObject.weather[0].description;
 
         // Humidity
-        var humid = jsObject.main.humidity;
+        var humid = jsObject.main.humidity + "%";
 
-        // Forecast string (will add more info)
-        var forecast = "Temperature: " + temp + " °F<br/> Humidity: " + humid + "%";
+        // Windspeed
+        var wind = jsObject.wind.speed + "mph";
 
-        // Replaces forecast paragraph html with forecast string
-         document.getElementById("forecast").innerHTML = forecast;
+        // Replaces paragraphs with information
+         document.getElementById("temp").innerHTML = "Currently: " + temp;
+         document.getElementById("maxtemp").innerHTML = "High: " + tempHigh;
+         document.getElementById("mintemp").innerHTML = "Low: " + tempLow;
+         document.getElementById("humidity").innerHTML = "Humidity: " + humid;
+         document.getElementById("wind").innerHTML = "Windspeed: " + wind;
+         document.getElementById("desc").innerHTML = "Description: " + desc;
+
      }
  }
  
